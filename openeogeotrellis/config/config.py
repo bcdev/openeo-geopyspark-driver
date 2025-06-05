@@ -123,6 +123,7 @@ class GpsBackendConfig(OpenEoBackendConfig):
     ejr_api: Optional[str] = os.environ.get("OPENEO_EJR_API")
     ejr_backend_id: str = "unknown"
     ejr_credentials_vault_path: Optional[str] = os.environ.get("OPENEO_EJR_CREDENTIALS_VAULT_PATH")
+    ejr_preserialize_process: bool = False
 
     # TODO: eliminate hardcoded Terrascope references
     # TODO #531 eliminate this config favor of etl_api_config strategy below
@@ -216,6 +217,14 @@ class GpsBackendConfig(OpenEoBackendConfig):
     To minimize memory use, a small default size like 128 can be set. For cases with more memory per cpu, larger sizes are relevant.
     """
     default_tile_size:Optional[int] = None
+
+    """
+    Default for the maximum partition size to target when repartitioning data cubes.
+    This default is not necessarily used everywhere, but can be used by the backend in locations where an optimal partition
+    size is needed.
+    The size is provided in megabytes.
+    """
+    default_max_partition_size: Optional[int] = None
 
     job_dependencies_poll_interval_seconds: float = 60  # poll every x seconds
     job_dependencies_max_poll_delay_seconds: float = 60 * 60 * 24 * 7  # for a maximum delay of y seconds

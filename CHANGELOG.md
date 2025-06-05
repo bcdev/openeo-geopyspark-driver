@@ -15,6 +15,8 @@ without compromising stable operations.
 
 ## In progress: 0.66.0
 
+- 'Batch job options' are now advertised following the openEO [processing parameters extension](https://github.com/Open-EO/openeo-api/tree/draft/extensions/processing-parameters)  ([Open-EO/openeo-python-driver#307](https://github.com/Open-EO/openeo-python-driver/issues/307))
+- use region specific config for workspace actions
 - `apply_neighborhood`/`apply_dimension`: support changing band names via apply_metadata ([#1155](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1155))
 - `StacApiWorkspace`: support arbitrary paths in `merge`; the last part of a path becomes the collection ID in the STAC API ([#1074](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1074))
 - Fix compatibility with Shapely 2 ([#1161](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1161))
@@ -22,6 +24,9 @@ without compromising stable operations.
 - Add timeout to metadata request on "stac" data sources in layer catalog ([eu-cdse/openeo-cdse-infra#525](https://github.com/eu-cdse/openeo-cdse-infra/issues/525))
 - Improve detection of `apply_metadata` function in UDF code (related to [#1182](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1182))
 - Fix `require_application_id` filter of `list_active_jobs` in job tracker ([#1197](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1197))
+- Remove outdated and defunct ZooKeeper "cleaner" scripts and code paths ([#1219](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1219), [#1123](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1123))
+- Move `integrations.s3` to Python driver [#1195](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1195)
+- Add config `ejr_preserialize_process` to enable process graph pre-serialization when storing new jobs in EJR ([#1232](https://github.com/Open-EO/openeo-geopyspark-driver/issues/1232))
 
 
 ## 0.65.0
